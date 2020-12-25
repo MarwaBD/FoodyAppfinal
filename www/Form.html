@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>App</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/index.js"></script>
+    <style>
+         body{
+	        text-align: center;
+	        }
+	     .Formulaire{
+	        width:50%;
+	        margin-top:7%;
+	     }
+	     .welcome{
+	        margin-top:10%;
+	        font-size: 40px;
+	     }
+	     h1{
+	     text-align:center;
+	     }
+
+    </style>
+</head>
+<body>
+
+<div data-role="page" id="Form">
+    <h1 class="Welcome">Welcome to Foody!</h1>
+    <div>
+        <h2>Existing user:</h2>
+        <a href="#Signin" rel="external"><input type="submit" data-inline="true" value="Sign in "></a>
+    </div>
+    <div>
+        <h2>Don't have an account:</h2>
+        <a href="#Signup" rel="external"><input type="submit" data-inline="true" value="Sign up "></a>
+    </div>
+</div>
+<div data-role="page" id="Signin">
+    <div data-role="header">
+        <h1>Sign in</h1>
+    </div>
+    <h1>Welcome!</h1>
+    <div data-role="content">
+        <form method="post">
+            <label for="mail">User email:</label>
+            <input type="email" name="nom" id="mail" required>
+            <label for="pwd">Password:</label>
+            <input type="password" name="pwd" id="pwd" required>
+            <fieldset class="ui-grid-a">
+                <div class="ui-block-a"><a id="SubmitSignin" data-role="button" data-theme="a" href="">Submit</a></div>
+                <div class="ui-block-b"><a id="ResetSignin" data-role="button" data-theme="a" href="#Form" rel="external">Reset</a></div>
+            </fieldset>
+        </form>
+    </div>
+
+</div>
+
+<div data-role="page" id="Signup">
+    <div data-role="header">
+        <h1>Sign up</h1>
+    </div>
+    <h1>Welcome!</h1>
+
+    <div data-role="content">
+        <form method="post" id="registrationform" >
+            <label for="userEmail">Email adresse:</label>
+            <input type="email" name="login" id="userEmail" required>
+
+            <label for="userPassword">Password:</label>
+            <input type="password" name="pwd" id="userPassword" required>
+
+            <fieldset class="ui-grid-a">
+                <div class="ui-block-a"><a id="SubmitSignup" data-role="button" data-theme="a" type="submit" sendMessage()>Submit</a></div>
+                <div class="ui-block-b"><a id="ResetSignup" data-role="button" data-theme="a" href="#Form" rel="external">Reset</a></div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+
+<script>
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyA-ZZhWSJOlh1dMq3koTluC0aGGPsqOtnM",
+    authDomain: "crossproject-e1719.firebaseapp.com",
+    projectId: "crossproject-e1719",
+    storageBucket: "crossproject-e1719.appspot.com",
+    messagingSenderId: "791706540411",
+    appId: "1:791706540411:web:00d98f8108c0881bea45de",
+    measurementId: "G-Q5T1RKNCVX"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  const auth = firebase.auth();
+</script>
+</body>
+</html>
